@@ -9,8 +9,8 @@
 ✌ swiper를  이용하여 무한슬라이드 구현
 
 ### Technical Language
-◾ HTML 
-◾ Jquery
+◾ HTML  
+◾ <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
 ◾ scss 
 
 

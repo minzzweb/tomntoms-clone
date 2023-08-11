@@ -8,8 +8,8 @@
 ✌ swiper를  이용하여 무한슬라이드 구현
 
 ### Technical Language
-◾ HTML
-◾ Jquery
+◾ HTML <br/>
+◾ Jquery <br/>
 ◾ scss 
 
 

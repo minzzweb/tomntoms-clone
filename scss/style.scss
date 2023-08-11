@@ -1,0 +1,1473 @@
+@import "./reset.css";
+@import "./mixin";
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    #wrapper{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        min-height: 100vh;
+        header{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 130px;
+            z-index: 1000;
+            background-color: #fff;
+            @include mobile{
+                height: 68px !important;
+            }
+            .header-container{
+                position: relative;
+                height: 100%;
+                box-sizing: border-box;
+                @include containerLayout;
+                @include auto_width{
+                    width: 100%;
+                }
+                .logo{
+                    position: absolute;
+                    top: 50%;
+                    left: 15px;
+                    margin-top: -45px;
+                    @include mobile{
+                        left: 50%;
+                       z-index: 1;
+                    }
+                    h1{
+                        a{
+                            img{
+                                width: 90px;
+                                height: 90px;
+                                @include mobile{
+                                    left: 50%;
+                                    width: 50px;
+                                    height: 50px;
+                                    margin-left: -25px;
+                                    margin-top: 19px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .gnb-sub{
+                    position: absolute;
+                    right: 15px;
+                    padding: 25px 0px 30px 0px;
+                    @include  mobile{
+                        display: none;
+                    }
+                    ul{
+                        display: flex;
+                        li{
+                           position: relative;
+                           color: #666;
+                           font-size: 15px;
+                           padding: 0px 10px;
+                           &::after{
+                               position: absolute;
+                               top: 50%;
+                               right: 0px;
+                                margin-top: -6px;
+                               content: "";
+                               width: 1px;
+                               height: 12px;
+                               background-color: #dedede;
+                           }
+                           &:last-child{
+                               padding-right: 0px;
+                               &::after{
+                                   display: none;
+                               }
+                           }
+                        }
+                    }
+                }
+                .nav{
+                    position: absolute;
+                    top: 70px;
+                    left: 0px;
+                    width: 100%;
+                    @include  mobile{
+                        display: none;
+                    }
+                    z-index: 1000;
+                    .nav-list{
+                      position: absolute;
+                       top: 0px;
+                       right: 0px;
+                        @include clearfix;
+                        .menu{
+                            position: relative;
+                            float: left;
+                            >a{
+                                position: relative;
+                                display: block;
+                                font-size: 19px;
+                                margin-left: 40px;
+                                padding-bottom: 25px;
+                                &:first-child{
+                                    padding-left: 0px;   
+                                }
+                                &:hover{
+                                    color: brown;
+                                }
+                                
+                            }
+                            .nav-sub{
+                                display: none;
+                                position: absolute;
+                                top: 44px;
+                                -webkit-box-shadow: 0px -5px 7px -5px rgba(0,0,0,0.82); 
+                                box-shadow: 0px -5px 7px -5px rgba(0,0,0,0.82);
+                                box-sizing: border-box;
+                                background-color:#fff;
+                               ul{
+                                   li{
+                                       margin-bottom: 15px;
+                                       font-weight: 600;
+
+                                       a{
+                                           &:hover{
+                                               text-decoration: underline;
+                                           }
+                                       }
+                                       .lnb{
+                                           color: #666;
+                                           margin-top: 15px;
+                                           font-size: 14px !important;
+                                       }
+                                   }
+                               }
+                            }
+                            &:nth-child(1) {
+                               .nav-sub{
+                                   width: 160px;
+                                   left: -20px;
+                                   padding: 75px 50px;
+                               }
+                            }
+                            &:nth-child(3) {
+                                .nav-sub{
+                                    width: 220px;
+                                    left: -40px;
+                                    padding: 75px 40px;
+                                }
+                             }
+                            &:nth-child(4) {
+                                .nav-sub{
+                                    width: 250px;
+                                    left: -50px;
+                                    padding: 75px 40px;
+                                }
+                             }
+                            &:nth-child(5) {
+                                .nav-sub{
+                                    width: 600px;
+                                    left: -280px;
+                                    padding: 65px 0px 10px 30px;
+                                    >ul{
+                                        @include clearfix;
+                                        >li{
+                                            float: left;
+                                            width: 190px;
+                                            box-sizing: border-box;
+                                        }
+                                    }
+                                }
+                             }
+                            &:nth-child(6) {
+                                .nav-sub{
+                                    width: 430px;
+                                    left: -270px;
+                                    padding: 65px 0px 10px 30px;
+                                  >ul{
+                                    @include clearfix;
+                                    >li{
+                                        &:nth-child(1){
+                                            float: left;
+                                            width: 200px;
+                                        }
+                                     }
+                                  }
+                                }
+                             }
+                        }
+                    }
+                }
+                .nav_btn_box{
+                    position: relative;
+                    width: 100%;
+                    height: 68px;
+                    display: none;
+                    @include mobile{
+                        display: block;
+                    }
+                    button{
+                        position: absolute;
+                        top: 50%;
+                        left: 12px;
+                        margin-top: -15px;
+                        background: none;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                        i{
+                            font-size: 30px;
+                            color: $main-color1;
+                        }
+                    }
+                    .store-btn{
+                        position: absolute;
+                        top: 50%;
+                        right: 12px;
+                        margin-top: -15px;
+                        a{
+                            img{
+                                display: block;
+                                width: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+            .mobile-nav{
+                position: fixed;
+                top: 0%;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(13, 17, 14, 0.7);
+                z-index: 1000;
+                
+                .mobile-nav-side{
+                    position: relative;
+                    top: 0px;
+                    left: -100%;
+                    width: 280px;
+                    height: inherit;
+                    background-color: #fff;
+                    transition: all 0.5s ease-in;
+                    >div{
+                        position: absolute;
+                        left: 0px;
+                        width: 100%;
+                    }
+                    .mobile-nav-top{
+                        position: absolute;
+                        top: 0px;
+                        height: 64px;
+                        border-bottom: 1px solid $main-color1;
+                        .nav_btn{
+                            position: absolute;
+                            top: 50%;
+                            right: -40px;
+                            margin-top: -15px;
+                             img{
+                                 display: inline-block;
+                                 width: 30px;
+                             }
+                        }
+                        .nav_logo{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            margin: -8px 0px 0px -90px;
+                           img{
+                               display: inline-block;
+                               width: 180px;
+                               
+                           }
+                        }
+                    }
+                    .mobile-nav-box{
+                        top: 65px;
+                        height: 265px;
+                        overflow-x: hidden;
+                       
+                        .nav-list{
+                            a{  
+                                display: block;
+                                width: 100%;
+                                line-height: 44px;
+                                box-sizing: border-box;
+                            }
+                            >li{
+                                >a{
+                                    position: relative;
+                                    display: block;
+                                    height: 44px;
+                                    padding-left: 10px;
+                                    color: #444;
+                                    font-size: 17px;
+                                    font-weight: 600;
+                                    border-bottom: 1px solid #dedede;
+                                    &::after{
+                                        display:block;
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 11px;
+                                        content: "\f078";
+                                        font-size: 14px;
+                                        color: $main-color1;
+                                        font-family: FontAwesome;
+                                        font-style: normal;
+                                        font-weight: normal;
+                                        line-height: 1;
+                                    }
+                                }
+                                .nav-sub{
+                                    display: none;
+                                    ul{
+                                        li{
+                                            a{
+                                                padding-left: 30px;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                color: #666;
+                                                background-color: #F6F6F6;
+                                                border-bottom: 1px solid #dedede;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:nth-child(2){
+                                    >a{
+                                        &::after{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .global-area{
+                        top:329px;
+                        ul{
+                            display: flex;
+                            line-height: 65px;
+                            justify-content: center;
+                            li{
+                                font-size: 14px;
+                                margin: 0px 8px;
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        section.main-visual{
+            position: relative;
+            width: 100%;
+            height: 42vw;
+            overflow: hidden;
+            margin-top: 130px;
+            @include mobile{
+                height:150vw;
+                margin-top: 68px;
+            }
+            .swiper-container{
+                height: 100%;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                .swiper-wrapper{
+                    
+                    .swiper-slide{
+                        
+                        /* Center slide text vertically */
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        a{
+                            @include backgroundLayout;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .main-visual01{
+                        a{
+                            background-image: url('../images/main-visual01.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m01.jpg');
+                            }
+                        }
+                    }
+                    .main-visual02{
+                        a{
+                            background-image: url('../images/main-visual02.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m02.jpg');
+                            }
+                        }
+                    }
+                    .main-visual03{
+                        a{
+                            background-image: url('../images/main-visual03.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m03.jpg');
+                            }
+                        }
+                    }
+                    .main-visual04{
+                        a{
+                            background-image: url('../images/main-visual04.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m04.jpg');
+                            }
+                        }
+                    }
+                    .main-visual05{
+                        a{
+                            background-image: url('../images/main-visual05.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m05.jpg');
+                            }
+                        }
+                    }
+                    .main-visual06{
+                        a{
+                            background-image: url('../images/main-visual06.jpg');
+                            @include mobile{
+                                background-image: url('../images/main-visual-m06.jpg');
+                            }
+                        }
+                    }
+                }
+                .pagination-area{
+                     position: absolute;
+                     width: 100%;
+                     max-width: 1430px;
+                     bottom: 7%;
+                     left: 50%;
+                     transform: translateX(-50%);
+                     z-index: 1000;
+                     display: flex;
+                     padding: 0px 15px;
+                     box-sizing: border-box;
+                     @include mobile{
+                        justify-content: center;
+                   }
+                    .swiper-pagination{
+                        position: static;
+                        top: auto;
+                        right: auto;
+                        left: auto;
+                        bottom: auto;
+                        margin: 0px 20px;
+
+                    .swiper-pagination-bullet{
+                        width: 47px;
+                        height: 6px;
+                        margin: 0 2px;
+                        border-radius:unset;
+                        background-color: #fff;
+                    }
+                        }
+                    .pager{
+                    font-size: 16px;
+                    color: #fff;
+                    font-weight: 800;
+                    @include mobile{
+                        display: none;
+                   }
+                        }
+                    .btn-box{
+                        i{
+                            font-size: 16px;
+                            color: #fff;
+                           // position: absolute;
+                            cursor: pointer;
+                        }
+                        .swiper-button-play{
+                            display: none;
+                        }
+                        .swiper-button-pause{
+                            display: block;
+                        }
+                        @include mobile{
+                            display: none;
+                       }
+                     }  
+                }
+            }
+            
+        }
+        .vertival-notice{
+            display: none;
+            background-color: $main-color1;
+            width: 100%;
+            height: 70px;
+            overflow: hidden;
+            @include tablet{
+                height: 60px;
+            }
+            @include mobile{
+                height: 60px;
+            }
+            .wrapper{
+                @include containerLayout;
+                padding: 0px 20px;
+                box-sizing: border-box;
+                display: flex;
+                height: 100%;
+                @include auto_width {
+                    width: 100%;
+                }
+                .vertival-notice-slide{
+                    width: 100%;
+                    @include clearfix;
+                    >div{
+                        float: left;
+                    }
+                    .icon-left{
+                        width: 6%;
+                        height: 70px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @include tablet{
+                            height: 60px;
+                        }
+                        @include mobile{
+                            height: 60px;
+                        }
+                        img{
+                            display: block;
+                            width: 34px;
+                        }
+                    }
+                    .swiper-container{
+                        width: 94%;
+                        height: 100%;
+                        .swiper-wrapper{
+                            display: flex;
+                            flex-direction: column;
+                            .swiper-slide{
+                                display: flex;
+                                width: 100%;
+                                line-height: 70px;
+                                @include tablet{
+                                    height: 60px;
+                                    line-height: 60px;
+                                }
+                                @include mobile{
+                                    height: 60px;
+                                    line-height: 60px;
+                                }
+                                .inner{
+                                     @include clearfix;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #fff;
+                                    
+                                    .txt-bx{
+                                        width: 70%;
+                                        overflow:hidden; 
+                                        text-overflow:ellipsis; 
+                                        white-space:nowrap;
+                                        .tit{
+                                            
+                                            width: 800px;
+                                            
+                                        }
+                                    }
+                                    .date-bx{
+                                        width: 20%;
+                                    }
+                                    .btn-bx{
+                                        width: 10%;
+                                        height: 100%;
+                                        text-align: left;
+                                        a{
+                                            display: block;
+                                            margin-top: 2px;
+                                            box-sizing: border-box;
+                                        }
+                                        
+                                    }
+                                    @include tablet{
+                                        font-size: 14px;
+                                    }
+                                    @include mobile{
+                                        font-size: 12px;
+                                        padding-left: 20px;
+                                        box-sizing: border-box;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pc-notice{
+                    .inner{
+                        width: 50%;
+                    }
+                }
+                .mobile-notice{
+                    .inner{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .vertival-pc{
+           @include tablet{display: block;}
+           @include desktop{display: block;}
+        }
+        .vertival-mobile{
+           @include mobile{display: block;}
+        }
+        .menu-content{
+            @include auto_width{
+                padding: 0px 20px ;
+            }
+            .menu-container{
+                overflow: hidden;
+                @include containerLayout;
+                @include auto_width{
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                h2{
+                    text-align: center;
+                    font-size: 50px;
+                    padding: 40px 0px 60px 0px;
+                    @include mobile{
+                        font-size: 24px;
+                        padding: 40px 0px 20px 0px;
+                    }
+                    @include tablet{
+                        font-size: 40px;
+                        padding: 40px 0px 40px 0px;
+                    }
+                    .toms{
+                        padding: 0px 10px;
+                        font-weight: 800;
+                    }
+                }
+                .menu-slide-box{
+                    position: relative;
+                    width: 100%;
+                    height: 42vw;
+                    @include mobile{
+                        height:100vw;
+                        }
+                    .swiper-container{
+                        width: 100%;
+                        height: 100%;
+                        overflow: visible;
+                        .swiper-wrapper{
+                            .swiper-slide{
+                               
+                                height: 80%;
+                                @include mobile{
+                                    width: 100%;
+                                }
+                                a{
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                    position: relative;
+                                    @include backgroundLayout;
+                                    background-position: center;
+                                    &:hover{
+                                        .border{
+                                            &::after{
+                                                width: 96%;
+                                                height: 96%;
+                                                opacity: 1;
+                                                top: 2%;
+                                                left: 2%;
+                                            }
+                                        }
+                                    }
+                                    div{
+                                        position: absolute;
+                                        width: 100%;
+                                    }
+                                    .border{
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        height: 100%;
+                                        width: 100%;
+                                        &::after{
+                                            position: absolute;
+                                            display: block;
+                                            top: 0px;
+                                            left: 0px;
+                                            content: "";
+                                            width: 100%;
+                                            height: 100%;
+                                            border: 2px solid #fff;
+                                            box-sizing: border-box;
+                                            opacity: 0;
+                                            transition: all 0.7s;
+                                        }
+                                    }
+                                    .txt{
+                                        top: 100%;
+                                        padding-top: 50px;
+                                        text-align: center;
+                                        font-size: 20px;
+                                        font-weight: 600;
+                                        @include tablet{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                            .mnu1{
+                                a{ 
+                                    background-image: url(../images/menu01.jpg);
+                                }
+                            }
+                            .mnu2{
+                                a{ 
+                                    background-image: url(../images/menu02.jpg);
+                                }
+                            }
+                            .mnu3{
+                                a{ 
+                                    background-image: url(../images/menu03.jpg);
+                                }
+                            }
+                            .mnu4{
+                                a{ 
+                                    background-image: url(../images/menu04.jpg);
+                                }
+                            }
+                            
+                        }
+                        .swiper-button-prev{
+                            color: #000;
+                        }
+                        .swiper-button-next{
+                            color: #000;  
+                        }
+                        .pagination-area{
+                            position: absolute;
+                            top: -50px;
+                            right: 0px;
+                            width: 200px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            @include mobile{
+                                display: none;
+                            }
+                            @include tablet{
+                                width: 160px;
+                            }
+                            .pager{
+                                font-size: 16px;
+                                font-weight: 800;
+                                color:#444;
+                                    }
+                            .swiper-pagination{
+                                position: static;
+                                top: auto;
+                                right: auto;
+                                left: auto;
+                                bottom: auto;
+                                .swiper-pagination-bullet{
+                                    width: 15px;
+                                    height: 15px;
+                                    margin: 0 10px;
+                                    @include tablet{
+                                        margin: 0 5px;
+                                    }
+                                }
+                            }
+                            .btn-box{
+                                i{
+                                    font-size: 18px;
+                                    color: 000;
+                                   // position: absolute;
+                                    cursor: pointer;
+                                }
+                                .swiper-button-play-menu{
+                                    display: none;
+                                }
+                                .swiper-button-pause-menu{
+                                    display: block;
+                                }
+                                @include mobile{
+                                    display: none;
+                               }
+                             }  
+                        }
+                  }
+                }
+                
+            }
+        }
+        .promote-content{
+             width: 100%;
+             height:600px;
+             margin: 30px 0px;
+             background-image: url(../images/promote-pc-bg.jpg);
+             background-color: #ebe0dc;
+             @include backgroundLayout;
+             @include auto_width{
+                 background-position-x: -200px;
+             }
+             @include tablet{
+                height:400px;
+             }
+             @include mobile{
+                height:150vw;
+                background-image: url(../images/promote-mob-bg.jpg);
+                background-position:center;  
+             }
+            .promoto-container{
+                position: relative;
+                width: 1430px;
+                height: 100%;
+                margin: 0 auto;
+                @include auto_width{
+                    width: 100%;
+                }
+                .promoto-text-box{
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 85px 0px;
+                    width: 60%;
+                    height: 100%;
+                    color: #572a31;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    opacity: 0.9;
+                    @include auto_width{
+                        width: 70%;
+                    }
+                    @include mobile{
+                        width: 100%; 
+                        text-align: center;
+                     }
+                    @include tablet{
+                        padding: 45px 0px;
+                    }
+                    .promote-tit{
+                        font-size: 45px;
+                        font-weight: 600;
+                        @include tablet{
+                            font-size: 30px;
+                        }
+                        @include mobile{
+                            font-size: 35px;
+                         }
+                         @media (max-width:570px) {
+                            font-size: 20px;
+                         }
+                        span{
+                            font-size: 60px;
+                            font-weight: 800;
+                            @include tablet{
+                                font-size: 40px;
+                            }
+                            @include mobile{
+                                font-size: 35px;
+                             }
+                        }
+                    }
+                    .promoto-txt{
+                        padding: 50px 0px 60px 0px;
+                        box-sizing: border-box;
+                        @include tablet{
+                            padding: 20px 0px 30px 0px;
+                        }
+                        @media (max-width:570px) {
+                            padding: 20px 10px 30px 10px;
+                         }
+                        p{  
+                            font-size: 25px;
+                            line-height: 30px;
+                            @include tablet{
+                                font-size: 18px;
+                            }
+                            @include mobile{
+                                font-size: 20px;
+                                font-weight: 600;
+                             }
+                             @media (max-width:570px) {
+                                font-size: 13px;
+                             }
+                        }
+                    }
+                    .promote-gnb{
+                        ul{
+                            display: flex;
+                            flex-wrap: wrap;
+                            @include mobile{
+                                width: 440px;
+                                margin: 0 auto;
+                             }
+                             @media (max-width:570px) {
+                                width: 260px;
+                                margin: 0 auto;
+                             }
+                            li{
+                                margin-right: 10px;
+                                @include mobile{
+                                    margin-right: 0px;
+                                 }
+                                a{
+                                    display: block;
+                                    width: 180px;
+                                    line-height: 60px;
+                                    text-align: center;
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    border: 1px solid $main-color1;
+                                    @include tablet{
+                                        width: 130px;
+                                    }
+                                    @include mobile{
+                                        width: 100%;
+                                     }
+                                     @media (max-width:570px) {
+                                        line-height: 40px;
+                                        font-size: 14px;
+                                     }
+                                }
+                                &:nth-child(1){
+                                    a{
+                                         background-color: #572a31;
+                                        color: #fff;
+                                    }
+                                }
+                                @include mobile{
+                                    &:nth-child(1){
+                                       width:  440px;
+                                       margin-bottom: 10px;
+                                    }
+                                    &:nth-child(2){
+                                        width: 215px;
+                                        margin-right: 5px;
+                                     }
+                                     &:nth-child(3){
+                                        width:  215px;
+                                        margin-left: 5px;
+                                     }
+                                 }
+                                 @media (max-width:570px) {
+                                    &:nth-child(1){
+                                        width:  260px;
+                                        margin-bottom: 10px;
+                                     }
+                                     &:nth-child(2){
+                                         width: 125px;
+                                         margin-right: 5px;
+                                      }
+                                      &:nth-child(3){
+                                         width:  125px;
+                                         margin-left: 5px;
+                                      }
+                                 }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        .mdpick-content{
+            @include auto_width{
+                padding: 0px 20px ;
+            }
+            .mdpick-container{
+                overflow: hidden;
+                @include containerLayout;
+                @include auto_width{
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                h2{
+                    text-align: center;
+                    font-size: 50px;
+                    padding: 40px 0px 60px 0px;
+                    @include mobile{
+                        font-size: 24px;
+                        padding: 40px 0px 20px 0px;
+                    }
+                    @include tablet{
+                        font-size: 40px;
+                        padding: 40px 0px 40px 0px;
+                    }
+                    .toms{
+                        padding: 0px 10px;
+                        font-weight: 800;
+                    }
+                }
+                .mdpick-slide-box{
+                    position: relative;
+                    width: 100%;
+                    height: 42vw;
+                    @include mobile{
+                        height:100vw;
+                        }
+                    .swiper-container{
+                        width: 100%;
+                        height: 100%;
+                        overflow: visible;
+                        .swiper-wrapper{
+                            .swiper-slide{
+                               
+                                height: 80%;
+                                @include mobile{
+                                    width: 100%;
+                                }
+                                a{
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                    position: relative;
+                                    @include backgroundLayout;
+                                    background-position: center;
+                                    &:hover{
+                                        .border{
+                                            &::after{
+                                                width: 96%;
+                                                height: 96%;
+                                                opacity: 1;
+                                                top: 2%;
+                                                left: 2%;
+                                            }
+                                        }
+                                    }
+                                    div{
+                                        position: absolute;
+                                        width: 100%;
+                                    }
+                                    .border{
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        height: 100%;
+                                        width: 100%;
+                                        &::after{
+                                            position: absolute;
+                                            display: block;
+                                            top: 0px;
+                                            left: 0px;
+                                            content: "";
+                                            width: 100%;
+                                            height: 100%;
+                                            border: 2px solid #fff;
+                                            box-sizing: border-box;
+                                            opacity: 0;
+                                            transition: all 0.7s;
+                                        }
+                                    }
+                                    .txt{
+                                        top: 100%;
+                                        padding-top: 50px;
+                                        text-align: center;
+                                        font-size: 20px;
+                                        font-weight: 600;
+                                        @include tablet{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                            .pick1{
+                                a{ 
+                                    background-image: url(../images/mdpic01.jpg);
+                                }
+                            }
+                            .pick2{
+                                a{ 
+                                    background-image: url(../images/mdpic02.jpg);
+                                }
+                            }
+                            .pick3{
+                                a{ 
+                                    background-image: url(../images/mdpic03.jpg);
+                                }
+                            }
+                            .pick4{
+                                a{ 
+                                    background-image: url(../images/mdpic04.jpg);
+                                }
+                            }
+                            .pick5{
+                                a{ 
+                                    background-image: url(../images/mdpic05.jpg);
+                                }
+                            }
+                            
+                        }
+                        .swiper-button-prev{
+                            color: #000;
+                        }
+                        .swiper-button-next{
+                            color: #000;  
+                        }
+                        .pagination-area{
+                            position: absolute;
+                            top: -50px;
+                            right: 0px;
+                            width: 240px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            @include mobile{
+                                display: none;
+                            }
+                            @include tablet{
+                                width: 160px;
+                            }
+                            .pager{
+                                font-size: 16px;
+                                font-weight: 800;
+                                color:#444;
+                                    }
+                            .swiper-pagination{
+                                position: static;
+                                top: auto;
+                                right: auto;
+                                left: auto;
+                                bottom: auto;
+                                .swiper-pagination-bullet{
+                                    width: 15px;
+                                    height: 15px;
+                                    margin: 0 10px;
+                                    @include tablet{
+                                        margin: 0 5px;
+                                        width: 8px;
+                                        height: 8px;
+                                    }
+                                }
+                            }
+                            .btn-box{
+                                i{
+                                    font-size: 18px;
+                                    color: 000;
+                                   // position: absolute;
+                                    cursor: pointer;
+                                }
+                                .swiper-button-play-mdpick{
+                                    display: none;
+                                }
+                                .swiper-button-pause-mdpick{
+                                    display: block;
+                                }
+                                @include mobile{
+                                    display: none;
+                               }
+                             }  
+                        }
+                  }
+                }
+                
+            }
+        }
+        .sns-content{
+            .sns-container{
+                @include containerLayout;
+                @include auto_width{
+                    width: 100%;
+                }
+                h2{
+                    text-align: center;
+                    font-size: 50px;
+                    padding: 40px 0px 60px 0px;
+                    @include mobile{
+                        font-size: 24px;
+                        padding: 40px 0px 20px 0px;
+                    }
+                    @include tablet{
+                        font-size: 40px;
+                        padding: 40px 0px 40px 0px;
+                    }
+                    .toms{
+                        padding: 0px 10px;
+                        font-weight: 800;
+                    }
+                }
+                .sns-image{
+                    width: 100%;
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        li{
+                            flex: 20%;
+                            overflow: hidden;
+                            @include mobile{
+                                flex: calc(100%/3) 0;
+                            }
+                            a{ 
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                transform: scale(1);
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
+                                 transition: all 0.3s ease-in-out;
+                                &:hover{
+                                    transform: scale(1.2);
+                                    -webkit-transform: scale(1.2);
+                                    -moz-transform: scale(1.2);
+                                    -ms-transform: scale(1.2);
+                                    -o-transform: scale(1.2);
+                                }
+                                
+                               img{
+                                 display: block;
+                                 width: 100%;
+                                 height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        footer{
+           
+            background-color: #EFEFEF;
+            padding: 60px 0px  100px 0px;
+            margin-top: 100px;
+            @include mobile{
+                     padding: 0px 0px  0px 20px;
+                    height: 550px;
+                   overflow: hidden;
+                    box-sizing: border-box;
+            }
+            .footer-container{
+                position: relative;
+                @include containerLayout;
+                @include auto_width{
+                    width: 100%;
+                    padding: 0px 20px;
+                    box-sizing: border-box;
+                }
+                >div{
+                    float: left;
+                    @include mobile{
+                        float: unset;
+                        position: absolute;
+                        left: 0px;
+                    }
+                }
+                &::after{
+                    @include clearfix;
+                }
+                .customer-center{
+                    color: $main-color1;
+                    width: 25%;
+                    h2{
+                        font-size: 18px;
+                        padding-bottom: 30px;
+                        @include tablet{
+                            font-size: 15px;
+                        }
+                        @include mobile{
+                            font-size: 15px;
+                            padding-bottom: 10px;
+                        }
+                    }
+                    p{
+                        font-size: 35px;
+                        @include tablet{
+                            font-size: 25px;
+                        }
+                        @include mobile{
+                            font-size: 25px;
+                        }
+                    }
+                    @include mobile{
+                        width: 100%;
+                        top: 200px;
+                    }
+                }
+                .footer-gnb{
+                    color: $main-color1;
+                    width: 50%;
+                    padding: 0px 50px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    box-sizing: border-box;
+                    @include mobile{
+                        top: 300px;
+                        width: 100%;
+                        padding: 0px 0px;
+                    }
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        li{
+                           padding-bottom: 20px;
+                           padding-right: 40px;
+                           @include tablet{
+                               font-size: 14px;
+                           }
+                           @include mobile{
+                            font-size: 14px;
+                            padding-right: 10px;
+                        }
+                        }
+                    }
+                }
+                .link-icon{
+                    width: 25%;
+                    padding: 0px 0px 0px 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    box-sizing: border-box;
+                    @include mobile{
+                       top: 0px;
+                       height: 100px;
+                       width: 100%;
+                       padding: 0px 0px 0px 0px;
+                       justify-content: unset;
+                    }
+                    div{
+                        @include mobile{
+                            padding-right: 10px;
+                         }
+                    }
+                    .icon-tit{
+                       @include tablet{
+                        font-size: 14px;
+                    } 
+                    }
+                    div{
+                        @include tablet{
+                         a{
+                            img{
+                                display: block;
+                                width: 30px;
+                            }
+                         } 
+                        }
+                        @include mobile{
+                            a{
+                                img{
+                                    display: block;
+                                    width: 30px;
+                                }
+                             } 
+                        }
+                    }
+                    
+                }
+                .footer-content{
+                    width: 100%;
+                    padding-top: 20px;
+                    opacity: 0.7;
+                    font-size: 14px;
+                    @include mobile{
+                        top: 400px;
+                        padding-top:0px;
+                    }
+                    .footer-content-box{
+                        width: 50%;
+                        margin: 0 auto;
+                        padding: 0px 0px 0px 50px;
+                        box-sizing: border-box;
+                        @include mobile{
+                            width: 100%;
+                            padding: 0px 0px 0px 0px;
+                            font-size: 12px;
+                        }
+                        p{
+                            padding-bottom: 5px;
+                        }
+                        @include tablet{
+                            width: 100%;
+                            padding: 0px 0px 0px 0px;
+                        }
+                    }
+                }
+                .copyright{
+                    width: 100%;
+                    opacity: 0.7;
+                    font-size: 14px;
+                    padding-top: 20px;
+                    @include mobile{
+                        top: 470px;
+                        padding-top: 0px;
+                    }
+                    p{
+                        width: 50%;
+                        margin: 0 auto;
+                        padding: 0px 50px;
+                        box-sizing: border-box;
+                        @include tablet{
+                            width: 100%;
+                            padding: 0px 0px 0px 0px;
+                        }
+                        @include mobile{
+                            width: 100%;
+                            padding: 0px 0px 0px 0px;
+                        }
+                    }
+                }
+                .mobile-language{
+                    display: none;
+                    @include  mobile {
+                        display: block;
+                        top: 100px;
+                        h2{
+                            opacity: 0.7;
+                            font-size: 20px;
+                            padding-bottom: 10px;
+                        }
+                        ul{
+                            display: flex;
+                            font-weight: 600;
+                            li{
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .scrollTop-button{
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            -webkit-box-shadow: 1px 6px 15px -6px rgba(0,0,0,0.46); 
+            box-shadow: 1px 6px 15px -6px rgba(0,0,0,0.46);
+            button{
+                background: none;
+                outline: none;
+                border: none;
+                background-color: #666;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                .fa-chevron-up{
+                    color: #fff;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

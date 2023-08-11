@@ -13,9 +13,6 @@
 ####◾ scss 
 
 
-#### image
-
-![image](https://github.com/minzzweb/tomntoms-clone/assets/139015119/35ef56c8-9949-4d79-afbd-35c97975e3a3)
 
 
 

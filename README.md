@@ -13,7 +13,8 @@
 <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
 <img alt="SASS" src ="https://img.shields.io/badge/scss-cc6699.svg?&style=for-the-badge&logo=scss&logoColor=cc6699"/>
 
-
+### 시연영상 
+https://minjoo0603.tistory.com/62
 
 
 
